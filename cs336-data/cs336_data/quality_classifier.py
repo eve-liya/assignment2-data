@@ -1,8 +1,4 @@
-import fasttext
-from cs336_data import extract_text
 from pathlib import Path
-import resiliparse.parse
-import resiliparse.extract.html2text
 import re
 from pathlib import Path
 from fasttext import train_supervised, load_model
@@ -70,7 +66,7 @@ def train_fasttext_model(dataset_path: str | Path, model_path: str | Path, valid
     return model
 
 class QualityModel:
-    def __init__(self, model_path: str | Path = 'data/fasttext-quality.bin'):
+    def __init__(self, model_path: str | Path = 'models/fasttext-quality.bin'):
         self.model = load_model(str(model_path))
     
     def predict(self, text: str):
@@ -84,14 +80,14 @@ class QualityModel:
         return label, prob[0]
         
 def load_and_predict(text: str):
-    model = QualityModel('data/fasttext-quality.bin')
+    model = QualityModel('models/fasttext-quality.bin')
     return model.predict(text)
 
 if __name__ == '__main__':
     # Define file paths.
     training_dataset = "data/quality-dataset-train.txt"
         
-    train_fasttext_model(dataset_path=training_dataset, model_path="data/fasttext-quality.bin")
+    train_fasttext_model(dataset_path=training_dataset, model_path="models/fasttext-quality.bin")
     
     sample_text = "This is a well-written research article with clear arguments and proper citations."
     label, confidence = load_and_predict(sample_text)
