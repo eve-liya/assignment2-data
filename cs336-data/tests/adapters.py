@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import os
 from typing import Any
-from cs336_data import extract_text, identify_text
+from cs336_data import extract_text, identify_text, deduplication, quality_classifier
 
 
 def run_extract_text_from_html_bytes(html_bytes: bytes) -> str | None:
@@ -34,17 +34,16 @@ def run_classify_toxic_speech(text: str) -> tuple[Any, float]:
 
 
 def run_classify_quality(text: str) -> tuple[Any, float]:
-    raise NotImplementedError
-
+    return quality_classifier.load_and_predict(text)
 
 def run_gopher_quality_filter(text: str) -> bool:
-    raise NotImplementedError
+    return quality_classifier.gopher_quality_filters(text)
 
 
 def run_exact_line_deduplication(
     input_files: list[os.PathLike], output_directory: os.PathLike
 ):
-    raise NotImplementedError
+    deduplication.exact_deduplication(input_files, output_directory)
 
 
 def run_minhash_deduplication(
@@ -55,4 +54,4 @@ def run_minhash_deduplication(
     jaccard_threshold: float,
     output_directory: os.PathLike,
 ):
-    raise NotImplementedError
+    deduplication.run_minhash_deduplication(input_files, num_hashes, num_bands, ngrams, output_directory, jaccard_threshold)

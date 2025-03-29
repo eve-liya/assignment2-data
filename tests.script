@@ -1,0 +1,35 @@
+Script started on 2025-03-29 07:21:35+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="123" LINES="13"]
+]0;vchan26@gn-16-30-00:~/ECE491B/assignment2-data[?2004h[vchan26@gn-16-30-00 assignment2-data]$ pytest -v
+[?2004l[1m=================================================== test session starts ===================================================[0m
+platform linux -- Python 3.10.16, pytest-8.3.4, pluggy-1.5.0 -- /home/vchan26/.conda/envs/eceassignment1/bin/python
+cachedir: .pytest_cache
+rootdir: /home/vchan26/ECE491B/assignment2-data
+[1mcollecting ... [0m[1mcollected 21 items                                                                                                        [0m
+
+cs336-data/tests/test_deduplication.py::test_exact_line_deduplication [32mPASSED[0m[32m                                        [  4%][0m
+cs336-data/tests/test_deduplication.py::test_minhash_deduplication_exact_duplicates [32mPASSED[0m[32m                          [  9%][0m
+cs336-data/tests/test_deduplication.py::test_minhash_deduplication_fuzzy_duplicates [32mPASSED[0m[32m                          [ 14%][0m
+cs336-data/tests/test_extract.py::test_extract_text_from_html_bytes [32mPASSED[0m[32m                                          [ 19%][0m
+cs336-data/tests/test_langid.py::test_identify_language_english [32mPASSED[0m[32m                                              [ 23%][0m
+cs336-data/tests/test_langid.py::test_identify_language_chinese_simplified [32mPASSED[0m[32m                                   [ 28%][0m
+cs336-data/tests/test_pii.py::test_mask_emails_single [32mPASSED[0m[32m                                                        [ 33%][0m
+cs336-data/tests/test_pii.py::test_mask_emails_multiple [32mPASSED[0m[32m                                                      [ 38%][0m
+cs336-data/tests/test_pii.py::test_mask_emails_existing_string [32mPASSED[0m[32m                                               [ 42%][0m
+cs336-data/tests/test_pii.py::test_mask_phones_single [32mPASSED[0m[32m                                                        [ 47%][0m
+cs336-data/tests/test_pii.py::test_mask_ips [32mPASSED[0m[32m                                                                  [ 52%][0m
+cs336-data/tests/test_quality.py::test_classify_quality [32mPASSED[0m[32m                                                      [ 57%][0m
+cs336-data/tests/test_quality.py::test_gopher_valid_input [32mPASSED[0m[32m                                                    [ 61%][0m
+cs336-data/tests/test_quality.py::test_gopher_less_than_50_non_symbol_words [32mPASSED[0m[32m                                  [ 66%][0m
+cs336-data/tests/test_quality.py::test_gopher_more_than_100000_non_symbol_words [32mPASSED[0m[32m                              [ 71%][0m
+cs336-data/tests/test_quality.py::test_gopher_average_word_length_less_than_3 [32mPASSED[0m[32m                                [ 76%][0m
+cs336-data/tests/test_quality.py::test_gopher_average_word_length_greater_than_10 [32mPASSED[0m[32m                            [ 80%][0m
+cs336-data/tests/test_quality.py::test_gopher_more_than_30_percent_lines_ending_with_ellipsis [32mPASSED[0m[32m                [ 85%][0m
+cs336-data/tests/test_quality.py::test_gopher_less_than_80_percent_words_with_alphabetic_character [32mPASSED[0m[32m           [ 90%][0m
+cs336-data/tests/test_toxicity.py::test_classify_nsfw [32mPASSED[0m[32m                                                        [ 95%][0m
+cs336-data/tests/test_toxicity.py::test_classify_toxic_speech [32mPASSED[0m[32m                                                [100%][0m
+
+[32m=================================================== [32m[1m21 passed[0m[32m in 3.83s[0m[32m ====================================================[0m
+]0;vchan26@gn-16-30-00:~/ECE491B/assignment2-data[?2004h[vchan26@gn-16-30-00 assignment2-data]$ exit
+[?2004lexit
+
+Script done on 2025-03-29 07:21:45+00:00 [COMMAND_EXIT_CODE="0"]
